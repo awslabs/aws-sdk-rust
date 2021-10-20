@@ -27,8 +27,9 @@ async fn main() -> Result<()> {
         .init();
 
     let matches = clap_app().get_matches();
-    if let Some(_matches) = matches.subcommand_matches("publish") {
-        subcommand_publish().await?;
+    if let Some(matches) = matches.subcommand_matches("publish") {
+        let continue_from = matches.value_of("continue-from");
+        subcommand_publish(continue_from).await?;
     } else if let Some(_matches) = matches.subcommand_matches("fix-manifests") {
         subcommand_fix_manifests().await?;
     } else {
@@ -48,6 +49,17 @@ fn clap_app() -> clap::App<'static, 'static> {
                 .about("fixes path dependencies in manifests to also have version numbers"),
         )
         .subcommand(
-            clap::SubCommand::with_name("publish").about("publishes the AWS SDK to crates.io"),
+            clap::SubCommand::with_name("publish")
+                .about("publishes the AWS SDK to crates.io")
+                .arg(
+                    clap::Arg::with_name("continue-from")
+                        .long("continue-from")
+                        .required(false)
+                        .takes_value(true)
+                        .help(
+                            "Crate name to continue publishing from, if, for example, \
+                            publishing failed half way through previously.",
+                        ),
+                ),
         )
 }

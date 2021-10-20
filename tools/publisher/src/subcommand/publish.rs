@@ -5,7 +5,7 @@
 
 use crate::cargo;
 use crate::fs::Fs;
-use crate::package::{discover_package_batches, PackageBatch, PackageStats};
+use crate::package::{continue_batches_from, discover_package_batches, PackageBatch, PackageStats};
 use crate::repo::discover_repository;
 use crate::{REPO_CRATE_PATH, REPO_NAME};
 use anyhow::Result;
@@ -17,13 +17,20 @@ use tracing::info;
 
 const BACKOFF: Duration = Duration::from_millis(30);
 
-pub async fn subcommand_publish() -> Result<()> {
+pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
     // Make sure cargo exists
     cargo::confirm_installed_on_path().await?;
 
     info!("Discovering crates to publish...");
     let repo = discover_repository(REPO_NAME, REPO_CRATE_PATH)?;
-    let (batches, stats) = discover_package_batches(Fs::Real, &repo.crates_root).await?;
+    let (mut batches, mut stats) = discover_package_batches(Fs::Real, &repo.crates_root).await?;
+    if let Some(continue_from) = continue_from {
+        info!(
+            "Filtering batches so that publishing starts from {}.",
+            continue_from
+        );
+        continue_batches_from(continue_from, &mut batches, &mut stats)?;
+    }
     info!("Finished crate discovery.");
 
     // Don't proceed unless the user confirms the plan
